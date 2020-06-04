@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ProgramingList</string>
+    <string name="programing_name">Programing Name</string>
+    <string name="detail">Programing detail</string>
+</resources>
