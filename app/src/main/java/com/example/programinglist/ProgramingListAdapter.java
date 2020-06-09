@@ -16,6 +16,11 @@ import java.util.ArrayList;
 
 public class ProgramingListAdapter extends RecyclerView.Adapter<ProgramingListAdapter.ListViewHolder> {
     private ArrayList<Programing> programingArrayList;
+    private OnItemClickCallBack onItemClickCallBack;
+
+    public void setOnItemClickCallBack(OnItemClickCallBack onItemClickCallBack) {
+        this.onItemClickCallBack = onItemClickCallBack;
+    }
 
     public ProgramingListAdapter(ArrayList<Programing> programingArrayList) {
         this.programingArrayList = programingArrayList;
@@ -39,6 +44,13 @@ public class ProgramingListAdapter extends RecyclerView.Adapter<ProgramingListAd
                 .into(holder.imgPhoto);
         holder.tvName.setText(programing.getName());
         holder.tvDetail.setText(programing.getDetail());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallBack.onItemClicked(programingArrayList.get(holder.getAdapterPosition()));
+            }
+        });
     }
 
     @Override
@@ -58,5 +70,9 @@ public class ProgramingListAdapter extends RecyclerView.Adapter<ProgramingListAd
             tvName = itemView.findViewById(R.id.tv_item_name);
             tvDetail = itemView.findViewById(R.id.tv_item_detail);
         }
+    }
+
+    public  interface OnItemClickCallBack {
+        void onItemClicked(Programing data);
     }
 }

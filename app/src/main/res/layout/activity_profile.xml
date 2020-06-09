@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/profile"
+    android:background="#314C5D">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/profile"/>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="525dp"
+            android:layout_marginTop="-24dp"
+            android:background="@drawable/rectangle_rounded_upside">
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="128dp"
+                android:layout_height="124dp"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="false"
+                android:clickable="false"
+                android:cropToPadding="false"
+                android:src="@drawable/profile_photo" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/photo"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="@string/nama"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/nama_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_below="@id/nama"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:text="@string/nama_detail" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nama_detail"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="@string/email"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/email_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/email"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:text="@string/email_detail"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

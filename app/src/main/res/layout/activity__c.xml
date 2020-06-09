@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/c_detail"
+    android:background="#314C5D">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/c_detail"/>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:background="@drawable/rectangle_rounded_upside">
+
+            <TextView
+                android:id="@+id/c_title"
+                style="@style/TextContent.Title"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/c_title"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/c_subtitle"
+                style="@style/TextContent.Subtitle"
+                android:layout_below="@id/c_title"
+                android:text="@string/c_subtitle"/>
+
+            <TextView
+                android:id="@+id/c_subtitle_detail"
+                style="@style/TextContent.Detail"
+                android:layout_below="@id/c_subtitle"
+                android:text="@string/c_subtitle_detail"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

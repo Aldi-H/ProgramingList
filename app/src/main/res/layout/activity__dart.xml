@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dart_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#314C5D">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/dart_detail"/>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:background="@drawable/rectangle_rounded_upside">
+
+            <TextView
+                android:id="@+id/dart_title"
+                style="@style/TextContent.Title"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/dart_title"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/dart_subtitle"
+                style="@style/TextContent.Subtitle"
+                android:layout_below="@id/dart_title"
+                android:text="@string/dart_subtitle"/>
+
+            <TextView
+                android:id="@+id/dart_definition_detail"
+                style="@style/TextContent.Detail"
+                android:layout_below="@id/dart_subtitle"
+                android:text="@string/dart_definition_detail"/>
+
+            <TextView
+                android:id="@+id/dart_history_subtitle"
+                style="@style/TextContent.Subtitle"
+                android:layout_below="@id/dart_definition_detail"
+                android:text="@string/dart_history_subtitle"/>
+
+            <TextView
+                android:id="@+id/dart_history_detail"
+                style="@style/TextContent.Detail"
+                android:layout_below="@id/dart_history_subtitle"
+                android:text="@string/dart_history_detail"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
