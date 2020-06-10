@@ -16,21 +16,23 @@ import java.util.ArrayList;
 
 public class ProgramingListAdapter extends RecyclerView.Adapter<ProgramingListAdapter.ListViewHolder> {
     private ArrayList<Programing> programingArrayList;
-    private OnItemClickCallBack onItemClickCallBack;
+    //private OnItemClickCallBack onItemClickCallBack;
+    private  OnClick mOnClickListener;
 
-    public void setOnItemClickCallBack(OnItemClickCallBack onItemClickCallBack) {
+    /*public void setOnItemClickCallBack(OnItemClickCallBack onItemClickCallBack) {
         this.onItemClickCallBack = onItemClickCallBack;
-    }
+    }*/
 
-    public ProgramingListAdapter(ArrayList<Programing> programingArrayList) {
+    public ProgramingListAdapter(ArrayList<Programing> programingArrayList, OnClick mOnClickListener) {
         this.programingArrayList = programingArrayList;
+        this.mOnClickListener = mOnClickListener;
     }
 
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_row_programing, viewGroup,false);
-        return new ListViewHolder(view);
+        return new ListViewHolder(view, mOnClickListener);
     }
 
     @Override
@@ -45,12 +47,12 @@ public class ProgramingListAdapter extends RecyclerView.Adapter<ProgramingListAd
         holder.tvName.setText(programing.getName());
         holder.tvDetail.setText(programing.getDetail());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onItemClickCallBack.onItemClicked(programingArrayList.get(holder.getAdapterPosition()));
             }
-        });
+        });*/
     }
 
     @Override
@@ -59,20 +61,33 @@ public class ProgramingListAdapter extends RecyclerView.Adapter<ProgramingListAd
     }
 
     //Inisialisasi view yang terdapat di layout item
-    public class ListViewHolder extends RecyclerView.ViewHolder {
+    public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView imgPhoto;
         TextView tvName, tvDetail;
+        OnClick onClickListener;
 
-        public ListViewHolder(View itemView) {
+        public ListViewHolder(View itemView, OnClick onClickListener) {
             super(itemView);
 
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.tv_item_name);
             tvDetail = itemView.findViewById(R.id.tv_item_detail);
+            this.onClickListener = onClickListener;
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            onClickListener.onClick(getAdapterPosition());
         }
     }
 
-    public  interface OnItemClickCallBack {
+    /*public  interface OnItemClickCallBack {
         void onItemClicked(Programing data);
+    }*/
+
+    public interface OnClick {
+        void onClick(int position);
     }
 }

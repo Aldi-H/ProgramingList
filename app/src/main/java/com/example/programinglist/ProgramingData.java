@@ -1,8 +1,10 @@
 package com.example.programinglist;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ProgramingData {
+
     private static String[] programingNames = {
             "JAVA",
             "DART",
@@ -40,10 +42,21 @@ public class ProgramingData {
             R.drawable.html,
             R.drawable.ruby,
             R.drawable.php
+
+            /*Integer.toString(R.drawable.java),
+            Integer.toString(R.drawable.dart),
+            Integer.toString(R.drawable.c__),
+            Integer.toString(R.drawable.c_),
+            Integer.toString(R.drawable.c),
+            Integer.toString(R.drawable.python),
+            Integer.toString(R.drawable.javascript),
+            Integer.toString(R.drawable.html),
+            Integer.toString(R.drawable.ruby),
+            Integer.toString(R.drawable.php)*/
     };
 
     static ArrayList<Programing> getListData() {
-        ArrayList<Programing> list = new ArrayList<>();
+         ArrayList<Programing> list = new ArrayList<>();
         for (int position = 0; position < programingNames.length; position++) {
             Programing programing = new Programing();
             programing.setName(programingNames[position]);
